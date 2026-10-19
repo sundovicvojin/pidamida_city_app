@@ -6,6 +6,7 @@
   "scripts": {
     "placeholders": "node scripts/make-placeholders.mjs",
     "manifest": "node scripts/build-manifest.mjs",
+    "apartments": "node scripts/sync-apartments.mjs",
     "predev": "node scripts/make-placeholders.mjs && node scripts/build-manifest.mjs",
     "dev": "vite",
     "prebuild": "node scripts/build-manifest.mjs",

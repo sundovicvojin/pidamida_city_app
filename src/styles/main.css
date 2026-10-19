@@ -1361,3 +1361,26 @@ body {
   transform: none;
   border-color: rgb(255 255 255 / 0.5);
 }
+
+/* Ostali oblici iz Figme (npr. LB, LC, okvir) nisu stanovi: ne crtaju se. */
+.stage__overlay svg :is(path, rect, polygon, circle, ellipse, polyline, line):not(.apt):not(.apt *):not(.zone):not(.zone *) {
+  display: none;
+}
+
+/* zone u izgradnji (LB, LC): sivo, bez klika */
+.stage__overlay .zone,
+.stage__overlay .zone * {
+  fill: rgb(110 114 122 / 0.42);
+  stroke: rgb(190 194 202 / 0.45);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  transition: fill 0.3s ease;
+}
+.stage__overlay .zone {
+  pointer-events: all;
+  cursor: not-allowed;
+}
+.stage__overlay .zone:hover,
+.stage__overlay .zone:hover * {
+  fill: rgb(110 114 122 / 0.62);
+}

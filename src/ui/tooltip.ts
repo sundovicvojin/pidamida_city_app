@@ -1,3 +1,4 @@
+import { CONFIG } from '../config';
 import { STATUS_LABEL, type Apartment } from '../data/apartments';
 import { fmtArea } from '../data/format';
 import type { Store } from '../data/store';
@@ -33,12 +34,20 @@ export class Tooltip {
     host.addEventListener('pointerdown', (e) => (this.lastType = e.pointerType));
     host.addEventListener('pointermove', (e) => {
       if (e.pointerType === 'touch') return;
+      const z = this.zoneAt(e.target);
+      if (z) return this.showZoneTip(z, e.clientX, e.clientY);
       const a = this.aptAt(e.target);
       if (!a) return this.hideTip();
       this.showTip(a, e.clientX, e.clientY);
     });
     host.addEventListener('pointerleave', () => this.hideTip());
     host.addEventListener('click', (e) => {
+      const z = this.zoneAt(e.target);
+      if (z) {
+        // zona u izgradnji: nikad ne otvara karticu; na touch samo poruka
+        if (this.lastType === 'touch') this.selectZone(z);
+        return;
+      }
       const a = this.aptAt(e.target);
       if (!a) return this.clear();
       if (!clickable(a, this.soldOk)) return;
@@ -56,7 +65,27 @@ export class Tooltip {
   private aptAt(t: EventTarget | null) {
     const el = (t as Element | null)?.closest?.('.apt');
     if (!el || el.classList.contains('is-dimmed')) return null;
-    return this.store.get(el.id.slice(4)) ?? null;
+    return this.store.get((el as SVGElement).dataset.apt!) ?? null;
+  }
+
+  private zoneAt(t: EventTarget | null) {
+    const el = (t as Element | null)?.closest?.('.zone') as SVGElement | null;
+    return el ? el.dataset.zone! : null;
+  }
+
+  private showZoneTip(id: string, x: number, y: number) {
+    this.tip.innerHTML = `<b>${CONFIG.zones[id]}</b><span>${CONFIG.zoneNote}</span>`;
+    this.tip.hidden = false;
+    const w = this.tip.offsetWidth;
+    const h = this.tip.offsetHeight;
+    this.tip.style.transform = `translate(${Math.min(x + 18, innerWidth - w - 12)}px, ${Math.min(y + 18, innerHeight - h - 12)}px)`;
+  }
+
+  private selectZone(id: string) {
+    this.clear();
+    this.mini.innerHTML = `<div><b>${CONFIG.zones[id]}</b><span>${CONFIG.zoneNote}</span></div>`;
+    this.mini.hidden = false;
+    document.body.classList.add('has-mini');
   }
 
   private status(a: Apartment) {
@@ -64,7 +93,7 @@ export class Tooltip {
   }
 
   private showTip(a: Apartment, x: number, y: number) {
-    this.tip.innerHTML = `<b>${a.id.replace('_', ' ')}</b><span>${a.floor}. sprat · ${fmtArea(a.area)} m²</span>${this.status(a)}`;
+    this.tip.innerHTML = `<b>${a.id}</b><span>${a.floor}. sprat · ${fmtArea(a.area)} m²</span>${this.status(a)}`;
     this.tip.hidden = false;
     const w = this.tip.offsetWidth;
     const h = this.tip.offsetHeight;

@@ -40,7 +40,7 @@ export class ApartmentModal {
     this.render(a);
     this.root.hidden = false;
     document.body.classList.add('modal-open');
-    document.getElementById(`apt-${a.id}`)?.classList.add('is-active');
+    document.querySelector(`.apt[data-apt="${a.id}"]`)?.classList.add('is-active');
     this.card.querySelector<HTMLElement>('.modal__close')?.focus();
   }
 
@@ -65,7 +65,7 @@ export class ApartmentModal {
     document.querySelectorAll('.apt.is-active').forEach((e) => e.classList.remove('is-active'));
     this.current = next;
     this.render(next, true);
-    document.getElementById(`apt-${next.id}`)?.classList.add('is-active');
+    document.querySelector(`.apt[data-apt="${next.id}"]`)?.classList.add('is-active');
   }
 
   private onKey(e: KeyboardEvent) {
@@ -106,8 +106,8 @@ export class ApartmentModal {
         <p class="plan__missing">Tlocrt uskoro</p>
       </div>
       <div class="modal__info">
-        <p class="eyebrow">Lamela ${a.building.replace(/^L/, '')} &nbsp;·&nbsp; ${a.floor}. sprat</p>
-        <h2 class="modal__title">${a.id.replace('_', ' ')}</h2>
+        <p class="eyebrow">Lamela ${a.building.slice(1)} &nbsp;·&nbsp; ${a.floor}. sprat</p>
+        <h2 class="modal__title">${a.id}</h2>
         <span class="st st--${a.status}"><i></i>${STATUS_LABEL[a.status]}</span>
         <div class="hero"><b>${fmtArea(a.area)}</b><span>m²</span></div>
         <dl class="specs">

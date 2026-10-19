@@ -35,6 +35,9 @@ export const CONFIG = {
   // PLACEHOLDER: kad zvanični sajt dobije kontakt stranu, upiši njen URL. Podaci o stanu se šalju kao query parametri.
   inquiryUrl: 'https://example.com/kontakt/',
   brochureUrl: `${BASE}docs/brosura.pdf`,
+  // Delovi SVG-a koji nisu stanovi, ali se prikazuju sivo sa porukom (npr. lamele u izgradnji).
+  zones: { LB: 'Lamela B', LC: 'Lamela C' } as Record<string, string>,
+  zoneNote: 'U izgradnji',
   soldClickable: false, // klik na prodat stan otvara karticu?
   footerCredit: '© 2026 SB Company d.o.o. Sva prava zadržana.',
 };

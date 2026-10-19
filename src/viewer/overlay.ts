@@ -1,3 +1,4 @@
+import { CONFIG } from '../config';
 import type { Store } from '../data/store';
 
 /** SVG mapa stanova preko rendera: skida Figmine boje i nameće CSS klase po statusu/filteru. */
@@ -23,8 +24,19 @@ export class Overlay {
     svg?.removeAttribute('width');
     svg?.removeAttribute('height');
     svg?.setAttribute('preserveAspectRatio', 'none');
-    this.host.querySelectorAll<SVGElement>('[id^="apt-"]').forEach((el) => {
+    // Stan = svaki element čiji se id poklapa sa stanom iz apartments.json (LB, LC, Frame... se ignorišu).
+    this.host.querySelectorAll<SVGElement>('[id]').forEach((el) => {
+      if (CONFIG.zones[el.id]) {
+        el.classList.add('zone');
+        el.dataset.zone = el.id;
+        for (const n of [el, ...el.querySelectorAll<SVGElement>('*')]) {
+          for (const a of ['fill', 'stroke', 'style', 'opacity', 'fill-opacity', 'stroke-width']) n.removeAttribute(a);
+        }
+        return;
+      }
+      if (!this.store.get(el.id)) return;
       el.classList.add('apt');
+      el.dataset.apt = el.id;
       for (const n of [el, ...el.querySelectorAll<SVGElement>('*')]) {
         for (const a of ['fill', 'stroke', 'style', 'opacity', 'fill-opacity', 'stroke-width']) n.removeAttribute(a);
       }
@@ -34,12 +46,12 @@ export class Overlay {
 
   /** ID-jevi stanova vidljivi u trenutnom kadru. */
   ids() {
-    return [...this.host.querySelectorAll('.apt')].map((e) => e.id.slice(4));
+    return [...this.host.querySelectorAll<SVGElement>('.apt')].map((e) => e.dataset.apt!);
   }
 
   refresh() {
     this.host.querySelectorAll<SVGElement>('.apt').forEach((el) => {
-      const a = this.store.get(el.id.slice(4));
+      const a = this.store.get(el.dataset.apt!);
       if (!a) return;
       el.classList.remove('is-free', 'is-reserved', 'is-sold');
       el.classList.add(`is-${a.status}`);

@@ -1,14 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
-  <polygon id="apt-LA_102" points="340,554 640,554 670,482 370,482" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_202" points="340,476 640,476 670,404 370,404" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_302" points="340,398 640,398 670,326 370,326" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_402" points="340,320 640,320 670,248 370,248" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_502" points="340,242 640,242 670,170 370,170" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_602" points="340,164 640,164 670,92 370,92" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_103" points="660,554 960,554 990,482 690,482" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_203" points="660,476 960,476 990,404 690,404" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_303" points="660,398 960,398 990,326 690,326" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_403" points="660,320 960,320 990,248 690,248" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_503" points="660,242 960,242 990,170 690,170" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_603" points="660,164 960,164 990,92 690,92" fill="#fff" fill-opacity=".1" stroke="#fff"/>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 16">
+<path id="LA-09" d="M411.5 725.5L433 741H475.5L481.5 737.5H501L500 689.5H480L475.5 693H431.5L410 680.5L411.5 725.5Z" stroke="#19FF00"/>
+<path id="LA-08" d="M501 741H578.5V692H500L501 741Z" stroke="#19FF00"/>
+<path id="LA-07" d="M578.5 741H655.5V692H578.5V741Z" stroke="#19FF00"/>
+<path id="LA-06" d="M655.5 741H732.5V692.5L655.5 692V741Z" stroke="#19FF00"/>
+<path id="LA-21" d="M410 680.5L431.5 693H475.5L480 689.5H499.5L498.5 636.5H478L472.5 639.5H429.5L408.5 630.5L410 680.5Z" stroke="#19FF00"/>
+<path id="LA-20" d="M500 692H578L576.5 640.5H498.5L500 692Z" stroke="#19FF00"/>
+<path id="LA-19" d="M578 692H654V642L576.5 640.5L578 692Z" stroke="#19FF00"/>
+<path id="LA-18" d="M654 692L732.5 692.5L731.5 642H654V692Z" stroke="#19FF00"/>
+<path id="LA-33" d="M408.5 630.5L429.5 639.5H472.5L478 636.5H498L496.557 586H476.557L470 588H428L406 581L408.5 630.5Z" stroke="#19FF00"/>
+<path id="LA-32" d="M498.5 640.5H576L575 589.5H496.5L498.5 640.5Z" stroke="#19FF00"/>
+<path id="LA-31" d="M576 640.5L653.5 642L652.5 590.5L575 589.5L576 640.5Z" stroke="#19FF00"/>
+<path id="LA-30" d="M653.5 642H731.5V590.5H652.5L653.5 642Z" stroke="#19FF00"/>
+<path id="LA-45" d="M406 581L427.5 588H470L476.5 586H496L495 537L475 537.5L464.5 539H426L404.5 533L406 581Z" stroke="#19FF00"/>
+<path id="LA-44" d="M496.5 589.5H575L573.5 538H495L496.5 589.5Z" stroke="#19FF00"/>
+<path id="LA-43" d="M575 589.5L652.5 590.5L651.5 538.5L573.5 538L575 589.5Z" stroke="#19FF00"/>
+<path id="LA-42" d="M652.5 590.5H731.5L730 539L651.5 538.5L652.5 590.5Z" stroke="#19FF00"/>
+<path id="LA-57" d="M404.5 533L425.5 539H465L474.5 537.5L494.5 537L493 486H473.5L463.5 488H424.5L403 486L404.5 533Z" stroke="#19FF00"/>
+<path id="LA-65" d="M403 486L423.5 488H463L473.5 486H493L491 403.5H421L400 404.5L403 486Z" stroke="#19FF00"/>
+<path id="LA-56" d="M495 538H573.5L572 487L493 486L495 538Z" stroke="#19FF00"/>
+<path id="LA-55" d="M573.5 538L651.5 538.5L650.5 487H572L573.5 538Z" stroke="#19FF00"/>
+<path id="LA-54" d="M651.5 538.5L730 539L729 487H650.5L651.5 538.5Z" stroke="#19FF00"/>
+<path id="LA-64" d="M492.016 485.994L650.5 487L649.5 403H491L492.016 485.994Z" stroke="#19FF00"/>
+<path id="LA-63" d="M650.5 487H803L802 403.5H649.5L650.5 487Z" stroke="#19FF00"/>
+<path id="LA-05" d="M732.5 741H806V692.5H732.5V741Z" stroke="#19FF00"/>
+<path id="LA-04" d="M806 741H882V692.5H806V741Z" stroke="#19FF00"/>
+<path id="LA-17" d="M731.5 642L732.5 692.5H806L805 642H731.5Z" stroke="#19FF00"/>
+<path id="LA-16" d="M805 642L806 692.5H882V642H805Z" stroke="#19FF00"/>
+<path id="LA-29" d="M731.5 590.5V642H805V590.5H731.5Z" stroke="#19FF00"/>
+<path id="LA-28" d="M805 590.5V642H881.5V590.5H805Z" stroke="#19FF00"/>
+<path id="LA-41" d="M730 539L731.5 590.5H805V539H730Z" stroke="#19FF00"/>
+<path id="LA-40" d="M805 539V590.5H881V539H805Z" stroke="#19FF00"/>
+<path id="LA-53" d="M729 487L730 539H804.5L803.5 487H729Z" stroke="#19FF00"/>
+<path id="LA-52" d="M803.5 487L804.5 539H881V487H803.5Z" stroke="#19FF00"/>
+<path id="LA-62" d="M802 403L803 487H880.5V403H802Z" stroke="#19FF00"/>
+<path id="LB" d="M882 741H1266L1272.5 396H881L882 741Z" stroke="#19FF00"/>
+<path id="LC" d="M1266 741L1572.5 742.5L1586.5 395.5L1272.5 396L1266 741Z" stroke="#19FF00"/>
+</g>
 </svg>

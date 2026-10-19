@@ -1,14 +1,32 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
-  <polygon id="apt-LA_103" points="340,554 640,554 610,482 310,482" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_203" points="340,476 640,476 610,404 310,404" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_303" points="340,398 640,398 610,326 310,326" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_403" points="340,320 640,320 610,248 310,248" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_503" points="340,242 640,242 610,170 310,170" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_603" points="340,164 640,164 610,92 310,92" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_104" points="660,554 960,554 930,482 630,482" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_204" points="660,476 960,476 930,404 630,404" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_304" points="660,398 960,398 930,326 630,326" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_404" points="660,320 960,320 930,248 630,248" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_504" points="660,242 960,242 930,170 630,170" fill="#fff" fill-opacity=".1" stroke="#fff"/>
-  <polygon id="apt-LA_604" points="660,164 960,164 930,92 630,92" fill="#fff" fill-opacity=".1" stroke="#fff"/>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame 17">
+<path id="LA-11" d="M1284.5 883.5L1072.5 891V806L1284.5 798V883.5Z" stroke="#19FF00"/>
+<path id="LA-10" d="M1072.5 891L926.5 897.5V812L1072.5 806V891Z" stroke="#19FF00"/>
+<path id="LA-23" d="M1284.5 798L1072.5 806V713L1286 708L1284.5 798Z" stroke="#19FF00"/>
+<path id="LA-24" d="M1072.5 806L926.5 812V716.5L1072.5 713V806Z" stroke="#19FF00"/>
+<path id="LA-35" d="M1286 708L1072.5 713V625.5L1287 621L1286 708Z" stroke="#19FF00"/>
+<path id="LA-36" d="M1072.5 713L926.5 716.5V627L1072.5 625.5V713Z" stroke="#19FF00"/>
+<path id="LA-47" d="M1287 621L1072.5 625.5V538.5L1287 536.5V621Z" stroke="#19FF00"/>
+<path id="LA-48" d="M1072.5 625.5L926.5 627V538.5H1072.5V625.5Z" stroke="#19FF00"/>
+<path id="LA-59" d="M1287 536.5L1072.5 538.5V444L1289.5 443L1287 536.5Z" stroke="#19FF00"/>
+<path id="LA-60" d="M1072.5 538.5H926V444H1072.5V538.5Z" stroke="#19FF00"/>
+<path id="LA-67" d="M1289.5 443L926 444V301.5L1292 308.5L1289.5 443Z" stroke="#19FF00"/>
+<path id="LA-03" d="M383 914L531 900V812.5L383 823.5V914Z" stroke="#19FF00"/>
+<path id="LA-02" d="M531 900L747 879V796L531 812.5V900Z" stroke="#19FF00"/>
+<path id="LA-01" d="M747 879L923.5 863V784L747 796V879Z" stroke="#19FF00"/>
+<path id="LA-15" d="M383 823.5L531 812.5V721.5L382 728L383 823.5Z" stroke="#19FF00"/>
+<path id="LA-14" d="M531 721.5V812.5L747 796V710L531 721.5Z" stroke="#19FF00"/>
+<path id="LA-13" d="M747 710V796L923.5 784V700.5L747 710Z" stroke="#19FF00"/>
+<path id="LA-27" d="M382 728L531 721.5V629.5L382.5 634.5L382 728Z" stroke="#19FF00"/>
+<path id="LA-26" d="M531 629.5V721.5L747 710V624.5L531 629.5Z" stroke="#19FF00"/>
+<path id="LA-25" d="M747 624.5V710L923.5 700.5L924.5 619L747 624.5Z" stroke="#19FF00"/>
+<path id="LA-39" d="M382.5 634.5L531 629.5L529 539L381.5 541L382.5 634.5Z" stroke="#19FF00"/>
+<path id="LA-38" d="M529 539L531 629.5L747 624.5V538L529 539Z" stroke="#19FF00"/>
+<path id="LA-37" d="M747 538V624.5L924.5 619V535.5L747 538Z" stroke="#19FF00"/>
+<path id="LA-51" d="M381.5 541L529 539L527 447.5H378.5L381.5 541Z" stroke="#19FF00"/>
+<path id="LA-50" d="M527 447.5L529 539L747 538V450L527 447.5Z" stroke="#19FF00"/>
+<path id="LA-49" d="M747 450V538L924.5 535.5V453.5L747 450Z" stroke="#19FF00"/>
+<path id="LA-62" d="M378.5 447.5H527V300H523V284.5L376 277L378.5 447.5Z" stroke="#19FF00"/>
+<path id="LA-61" d="M527 300V447.5L924 453L922.887 319.47L527 300Z" stroke="#19FF00"/>
+</g>
 </svg>
