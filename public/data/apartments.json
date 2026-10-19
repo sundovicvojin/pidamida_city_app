@@ -1,0 +1,434 @@
+[
+  {
+    "id": "LA_101",
+    "label": "Stan LA_101",
+    "building": "LA",
+    "floor": 1,
+    "area": 47.8,
+    "rooms": 1.5,
+    "structure": "jednoiposoban",
+    "orientation": "jug",
+    "balconyArea": 4,
+    "status": "free",
+    "price": 78870,
+    "shots": [
+      "Video2",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_101.svg"
+  },
+  {
+    "id": "LA_102",
+    "label": "Stan LA_102",
+    "building": "LA",
+    "floor": 1,
+    "area": 55,
+    "rooms": 2,
+    "structure": "dvosoban",
+    "orientation": "jug-istok",
+    "balconyArea": 5,
+    "status": "reserved",
+    "price": 90750,
+    "shots": [
+      "Video2",
+      "Video3"
+    ],
+    "floorplan": "/floorplans/LA_102.svg"
+  },
+  {
+    "id": "LA_103",
+    "label": "Stan LA_103",
+    "building": "LA",
+    "floor": 1,
+    "area": 69.7,
+    "rooms": 2.5,
+    "structure": "dvoiposoban",
+    "orientation": "istok",
+    "balconyArea": 6,
+    "status": "free",
+    "price": null,
+    "shots": [
+      "Video3",
+      "Video4"
+    ],
+    "floorplan": "/floorplans/LA_103.svg"
+  },
+  {
+    "id": "LA_104",
+    "label": "Stan LA_104",
+    "building": "LA",
+    "floor": 1,
+    "area": 31.4,
+    "rooms": 1,
+    "structure": "garsonjera",
+    "orientation": "sever-istok",
+    "balconyArea": 7,
+    "status": "sold",
+    "price": 51810,
+    "shots": [
+      "Video4",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_104.svg"
+  },
+  {
+    "id": "LA_201",
+    "label": "Stan LA_201",
+    "building": "LA",
+    "floor": 2,
+    "area": 60.1,
+    "rooms": 2,
+    "structure": "dvosoban",
+    "orientation": "jug",
+    "balconyArea": 4,
+    "status": "free",
+    "price": 99165,
+    "shots": [
+      "Video2",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_201.svg"
+  },
+  {
+    "id": "LA_202",
+    "label": "Stan LA_202",
+    "building": "LA",
+    "floor": 2,
+    "area": 74.8,
+    "rooms": 2.5,
+    "structure": "dvoiposoban",
+    "orientation": "jug-istok",
+    "balconyArea": 5,
+    "status": "free",
+    "price": null,
+    "shots": [
+      "Video2",
+      "Video3"
+    ],
+    "floorplan": "/floorplans/LA_202.svg"
+  },
+  {
+    "id": "LA_203",
+    "label": "Stan LA_203",
+    "building": "LA",
+    "floor": 2,
+    "area": 28,
+    "rooms": 1,
+    "structure": "garsonjera",
+    "orientation": "istok",
+    "balconyArea": 6,
+    "status": "reserved",
+    "price": 46200,
+    "shots": [
+      "Video3",
+      "Video4"
+    ],
+    "floorplan": "/floorplans/LA_203.svg"
+  },
+  {
+    "id": "LA_204",
+    "label": "Stan LA_204",
+    "building": "LA",
+    "floor": 2,
+    "area": 42.7,
+    "rooms": 1.5,
+    "structure": "jednoiposoban",
+    "orientation": "sever-istok",
+    "balconyArea": 7,
+    "status": "free",
+    "price": 70455,
+    "shots": [
+      "Video4",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_204.svg"
+  },
+  {
+    "id": "LA_301",
+    "label": "Stan LA_301",
+    "building": "LA",
+    "floor": 3,
+    "area": 71.4,
+    "rooms": 2.5,
+    "structure": "dvoiposoban",
+    "orientation": "jug",
+    "balconyArea": 4,
+    "status": "free",
+    "price": null,
+    "shots": [
+      "Video2",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_301.svg"
+  },
+  {
+    "id": "LA_302",
+    "label": "Stan LA_302",
+    "building": "LA",
+    "floor": 3,
+    "area": 33.1,
+    "rooms": 1,
+    "structure": "garsonjera",
+    "orientation": "jug-istok",
+    "balconyArea": 5,
+    "status": "free",
+    "price": 54615,
+    "shots": [
+      "Video2",
+      "Video3"
+    ],
+    "floorplan": "/floorplans/LA_302.svg"
+  },
+  {
+    "id": "LA_303",
+    "label": "Stan LA_303",
+    "building": "LA",
+    "floor": 3,
+    "area": 47.8,
+    "rooms": 1.5,
+    "structure": "jednoiposoban",
+    "orientation": "istok",
+    "balconyArea": 6,
+    "status": "sold",
+    "price": 78870,
+    "shots": [
+      "Video3",
+      "Video4"
+    ],
+    "floorplan": "/floorplans/LA_303.svg"
+  },
+  {
+    "id": "LA_304",
+    "label": "Stan LA_304",
+    "building": "LA",
+    "floor": 3,
+    "area": 55,
+    "rooms": 2,
+    "structure": "dvosoban",
+    "orientation": "sever-istok",
+    "balconyArea": 7,
+    "status": "reserved",
+    "price": null,
+    "shots": [
+      "Video4",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_304.svg"
+  },
+  {
+    "id": "LA_401",
+    "label": "Stan LA_401",
+    "building": "LA",
+    "floor": 4,
+    "area": 29.7,
+    "rooms": 1,
+    "structure": "garsonjera",
+    "orientation": "jug",
+    "balconyArea": 4,
+    "status": "free",
+    "price": 49005,
+    "shots": [
+      "Video2",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_401.svg"
+  },
+  {
+    "id": "LA_402",
+    "label": "Stan LA_402",
+    "building": "LA",
+    "floor": 4,
+    "area": 44.4,
+    "rooms": 1.5,
+    "structure": "jednoiposoban",
+    "orientation": "jug-istok",
+    "balconyArea": 5,
+    "status": "free",
+    "price": 73260,
+    "shots": [
+      "Video2",
+      "Video3"
+    ],
+    "floorplan": "/floorplans/LA_402.svg"
+  },
+  {
+    "id": "LA_403",
+    "label": "Stan LA_403",
+    "building": "LA",
+    "floor": 4,
+    "area": 60.1,
+    "rooms": 2,
+    "structure": "dvosoban",
+    "orientation": "istok",
+    "balconyArea": 6,
+    "status": "free",
+    "price": null,
+    "shots": [
+      "Video3",
+      "Video4"
+    ],
+    "floorplan": "/floorplans/LA_403.svg"
+  },
+  {
+    "id": "LA_404",
+    "label": "Stan LA_404",
+    "building": "LA",
+    "floor": 4,
+    "area": 74.8,
+    "rooms": 2.5,
+    "structure": "dvoiposoban",
+    "orientation": "sever-istok",
+    "balconyArea": 7,
+    "status": "free",
+    "price": 123420,
+    "shots": [
+      "Video4",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_404.svg"
+  },
+  {
+    "id": "LA_501",
+    "label": "Stan LA_501",
+    "building": "LA",
+    "floor": 5,
+    "area": 41,
+    "rooms": 1.5,
+    "structure": "jednoiposoban",
+    "orientation": "jug",
+    "balconyArea": 4,
+    "status": "reserved",
+    "price": 67650,
+    "shots": [
+      "Video2",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_501.svg"
+  },
+  {
+    "id": "LA_502",
+    "label": "Stan LA_502",
+    "building": "LA",
+    "floor": 5,
+    "area": 56.7,
+    "rooms": 2,
+    "structure": "dvosoban",
+    "orientation": "jug-istok",
+    "balconyArea": 5,
+    "status": "sold",
+    "price": null,
+    "shots": [
+      "Video2",
+      "Video3"
+    ],
+    "floorplan": "/floorplans/LA_502.svg"
+  },
+  {
+    "id": "LA_503",
+    "label": "Stan LA_503",
+    "building": "LA",
+    "floor": 5,
+    "area": 71.4,
+    "rooms": 2.5,
+    "structure": "dvoiposoban",
+    "orientation": "istok",
+    "balconyArea": 6,
+    "status": "free",
+    "price": 117810,
+    "shots": [
+      "Video3",
+      "Video4"
+    ],
+    "floorplan": "/floorplans/LA_503.svg"
+  },
+  {
+    "id": "LA_504",
+    "label": "Stan LA_504",
+    "building": "LA",
+    "floor": 5,
+    "area": 33.1,
+    "rooms": 1,
+    "structure": "garsonjera",
+    "orientation": "sever-istok",
+    "balconyArea": 7,
+    "status": "free",
+    "price": 54615,
+    "shots": [
+      "Video4",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_504.svg"
+  },
+  {
+    "id": "LA_601",
+    "label": "Stan LA_601",
+    "building": "LA",
+    "floor": 6,
+    "area": 61.8,
+    "rooms": 2,
+    "structure": "dvosoban",
+    "orientation": "jug",
+    "balconyArea": 4,
+    "status": "free",
+    "price": null,
+    "shots": [
+      "Video2",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_601.svg"
+  },
+  {
+    "id": "LA_602",
+    "label": "Stan LA_602",
+    "building": "LA",
+    "floor": 6,
+    "area": 68,
+    "rooms": 2.5,
+    "structure": "dvoiposoban",
+    "orientation": "jug-istok",
+    "balconyArea": 5,
+    "status": "reserved",
+    "price": 112200,
+    "shots": [
+      "Video2",
+      "Video3"
+    ],
+    "floorplan": "/floorplans/LA_602.svg"
+  },
+  {
+    "id": "LA_603",
+    "label": "Stan LA_603",
+    "building": "LA",
+    "floor": 6,
+    "area": 29.7,
+    "rooms": 1,
+    "structure": "garsonjera",
+    "orientation": "istok",
+    "balconyArea": 6,
+    "status": "free",
+    "price": 49005,
+    "shots": [
+      "Video3",
+      "Video4"
+    ],
+    "floorplan": "/floorplans/LA_603.svg"
+  },
+  {
+    "id": "LA_604",
+    "label": "Stan LA_604",
+    "building": "LA",
+    "floor": 6,
+    "area": 44.4,
+    "rooms": 1.5,
+    "structure": "jednoiposoban",
+    "orientation": "sever-istok",
+    "balconyArea": 7,
+    "status": "free",
+    "price": null,
+    "shots": [
+      "Video4",
+      "Video5"
+    ],
+    "floorplan": "/floorplans/LA_604.svg"
+  }
+]

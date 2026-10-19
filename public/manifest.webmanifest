@@ -1,0 +1,9 @@
+{
+  "name": "PIRAMIDA CITY",
+  "short_name": "PIRAMIDA",
+  "start_url": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#0b0c0f",
+  "theme_color": "#0b0c0f"
+}
