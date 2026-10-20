@@ -14,7 +14,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-01.webp"
+    "floorplan": "floorplans/A-01.webp",
+    "isometric": "isometric/A-01.webp"
   },
   {
     "id": "LA-02",
@@ -31,7 +32,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-02.webp"
+    "floorplan": "floorplans/A-02.webp",
+    "isometric": "isometric/A-02.webp"
   },
   {
     "id": "LA-03",
@@ -48,7 +50,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-03.webp"
+    "floorplan": "floorplans/A-03.webp",
+    "isometric": "isometric/A-03.webp"
   },
   {
     "id": "LA-04",
@@ -66,7 +69,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-04.webp"
+    "floorplan": "floorplans/A-04.webp",
+    "isometric": "isometric/A-04.webp"
   },
   {
     "id": "LA-05",
@@ -84,7 +88,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-05.webp"
+    "floorplan": "floorplans/A-05.webp",
+    "isometric": "isometric/A-05.webp"
   },
   {
     "id": "LA-06",
@@ -102,7 +107,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-06.webp"
+    "floorplan": "floorplans/A-06.webp",
+    "isometric": "isometric/A-06.webp"
   },
   {
     "id": "LA-07",
@@ -120,7 +126,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-07.webp"
+    "floorplan": "floorplans/A-07.webp",
+    "isometric": "isometric/A-07.webp"
   },
   {
     "id": "LA-08",
@@ -138,7 +145,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-08.webp"
+    "floorplan": "floorplans/A-08.webp",
+    "isometric": "isometric/A-08.webp"
   },
   {
     "id": "LA-09",
@@ -157,7 +165,8 @@
       "Video3",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-09.webp"
+    "floorplan": "floorplans/A-09.webp",
+    "isometric": "isometric/A-09.webp"
   },
   {
     "id": "LA-10",
@@ -176,7 +185,8 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-10.webp"
+    "floorplan": "floorplans/A-10.webp",
+    "isometric": "isometric/A-10.webp"
   },
   {
     "id": "LA-11",
@@ -195,7 +205,8 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-11.webp"
+    "floorplan": "floorplans/A-11.webp",
+    "isometric": "isometric/A-11.webp"
   },
   {
     "id": "LA-12",
@@ -212,7 +223,8 @@
     "shots": [
       "Video5"
     ],
-    "floorplan": "floorplans/LA-12.webp"
+    "floorplan": "floorplans/A-12.webp",
+    "isometric": "isometric/A-12.webp"
   },
   {
     "id": "LA-13",
@@ -229,7 +241,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-13.webp"
+    "floorplan": "floorplans/A-01.webp",
+    "isometric": "isometric/A-01.webp"
   },
   {
     "id": "LA-14",
@@ -246,7 +259,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-14.webp"
+    "floorplan": "floorplans/A-02.webp",
+    "isometric": "isometric/A-02.webp"
   },
   {
     "id": "LA-15",
@@ -263,7 +277,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-15.webp"
+    "floorplan": "floorplans/A-03.webp",
+    "isometric": "isometric/A-03.webp"
   },
   {
     "id": "LA-16",
@@ -281,7 +296,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-16.webp"
+    "floorplan": "floorplans/A-04.webp",
+    "isometric": "isometric/A-04.webp"
   },
   {
     "id": "LA-17",
@@ -299,7 +315,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-17.webp"
+    "floorplan": "floorplans/A-05.webp",
+    "isometric": "isometric/A-05.webp"
   },
   {
     "id": "LA-18",
@@ -317,7 +334,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-18.webp"
+    "floorplan": "floorplans/A-06.webp",
+    "isometric": "isometric/A-06.webp"
   },
   {
     "id": "LA-19",
@@ -335,7 +353,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-19.webp"
+    "floorplan": "floorplans/A-07.webp",
+    "isometric": "isometric/A-07.webp"
   },
   {
     "id": "LA-20",
@@ -353,7 +372,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-20.webp"
+    "floorplan": "floorplans/A-08.webp",
+    "isometric": "isometric/A-08.webp"
   },
   {
     "id": "LA-21",
@@ -372,7 +392,8 @@
       "Video3",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-21.webp"
+    "floorplan": "floorplans/A-09.webp",
+    "isometric": "isometric/A-09.webp"
   },
   {
     "id": "LA-22",
@@ -390,7 +411,8 @@
       "Video2",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-22.webp"
+    "floorplan": "floorplans/A-10.webp",
+    "isometric": "isometric/A-10.webp"
   },
   {
     "id": "LA-23",
@@ -409,7 +431,8 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-23.webp"
+    "floorplan": "floorplans/A-11.webp",
+    "isometric": "isometric/A-11.webp"
   },
   {
     "id": "LA-24",
@@ -427,7 +450,8 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-24.webp"
+    "floorplan": "floorplans/A-12.webp",
+    "isometric": "isometric/A-12.webp"
   },
   {
     "id": "LA-25",
@@ -444,7 +468,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-25.webp"
+    "floorplan": "floorplans/A-01.webp",
+    "isometric": "isometric/A-01.webp"
   },
   {
     "id": "LA-26",
@@ -461,7 +486,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-26.webp"
+    "floorplan": "floorplans/A-02.webp",
+    "isometric": "isometric/A-02.webp"
   },
   {
     "id": "LA-27",
@@ -478,7 +504,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-27.webp"
+    "floorplan": "floorplans/A-03.webp",
+    "isometric": "isometric/A-03.webp"
   },
   {
     "id": "LA-28",
@@ -496,7 +523,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-28.webp"
+    "floorplan": "floorplans/A-04.webp",
+    "isometric": "isometric/A-04.webp"
   },
   {
     "id": "LA-29",
@@ -514,7 +542,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-29.webp"
+    "floorplan": "floorplans/A-05.webp",
+    "isometric": "isometric/A-05.webp"
   },
   {
     "id": "LA-30",
@@ -532,7 +561,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-30.webp"
+    "floorplan": "floorplans/A-06.webp",
+    "isometric": "isometric/A-06.webp"
   },
   {
     "id": "LA-31",
@@ -550,7 +580,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-31.webp"
+    "floorplan": "floorplans/A-07.webp",
+    "isometric": "isometric/A-07.webp"
   },
   {
     "id": "LA-32",
@@ -568,7 +599,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-32.webp"
+    "floorplan": "floorplans/A-08.webp",
+    "isometric": "isometric/A-08.webp"
   },
   {
     "id": "LA-33",
@@ -587,7 +619,8 @@
       "Video3",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-33.webp"
+    "floorplan": "floorplans/A-09.webp",
+    "isometric": "isometric/A-09.webp"
   },
   {
     "id": "LA-34",
@@ -605,7 +638,8 @@
       "Video2",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-34.webp"
+    "floorplan": "floorplans/A-10.webp",
+    "isometric": "isometric/A-10.webp"
   },
   {
     "id": "LA-35",
@@ -624,7 +658,8 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-35.webp"
+    "floorplan": "floorplans/A-11.webp",
+    "isometric": "isometric/A-11.webp"
   },
   {
     "id": "LA-36",
@@ -642,7 +677,8 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-36.webp"
+    "floorplan": "floorplans/A-12.webp",
+    "isometric": "isometric/A-12.webp"
   },
   {
     "id": "LA-37",
@@ -659,7 +695,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-37.webp"
+    "floorplan": "floorplans/A-01.webp",
+    "isometric": "isometric/A-01.webp"
   },
   {
     "id": "LA-38",
@@ -676,7 +713,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-38.webp"
+    "floorplan": "floorplans/A-02.webp",
+    "isometric": "isometric/A-02.webp"
   },
   {
     "id": "LA-39",
@@ -693,7 +731,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-39.webp"
+    "floorplan": "floorplans/A-03.webp",
+    "isometric": "isometric/A-03.webp"
   },
   {
     "id": "LA-40",
@@ -711,7 +750,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-40.webp"
+    "floorplan": "floorplans/A-04.webp",
+    "isometric": "isometric/A-04.webp"
   },
   {
     "id": "LA-41",
@@ -729,7 +769,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-41.webp"
+    "floorplan": "floorplans/A-05.webp",
+    "isometric": "isometric/A-05.webp"
   },
   {
     "id": "LA-42",
@@ -747,7 +788,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-42.webp"
+    "floorplan": "floorplans/A-06.webp",
+    "isometric": "isometric/A-06.webp"
   },
   {
     "id": "LA-43",
@@ -765,7 +807,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-43.webp"
+    "floorplan": "floorplans/A-07.webp",
+    "isometric": "isometric/A-07.webp"
   },
   {
     "id": "LA-44",
@@ -783,7 +826,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-44.webp"
+    "floorplan": "floorplans/A-08.webp",
+    "isometric": "isometric/A-08.webp"
   },
   {
     "id": "LA-45",
@@ -802,7 +846,8 @@
       "Video3",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-45.webp"
+    "floorplan": "floorplans/A-09.webp",
+    "isometric": "isometric/A-09.webp"
   },
   {
     "id": "LA-46",
@@ -820,7 +865,8 @@
       "Video2",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-46.webp"
+    "floorplan": "floorplans/A-10.webp",
+    "isometric": "isometric/A-10.webp"
   },
   {
     "id": "LA-47",
@@ -839,7 +885,8 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-47.webp"
+    "floorplan": "floorplans/A-11.webp",
+    "isometric": "isometric/A-11.webp"
   },
   {
     "id": "LA-48",
@@ -857,7 +904,8 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-48.webp"
+    "floorplan": "floorplans/A-12.webp",
+    "isometric": "isometric/A-12.webp"
   },
   {
     "id": "LA-49",
@@ -874,7 +922,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-49.webp"
+    "floorplan": "floorplans/A-01.webp",
+    "isometric": "isometric/A-01.webp"
   },
   {
     "id": "LA-50",
@@ -891,7 +940,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-50.webp"
+    "floorplan": "floorplans/A-02.webp",
+    "isometric": "isometric/A-02.webp"
   },
   {
     "id": "LA-51",
@@ -908,7 +958,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-51.webp"
+    "floorplan": "floorplans/A-03.webp",
+    "isometric": "isometric/A-03.webp"
   },
   {
     "id": "LA-52",
@@ -926,7 +977,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-52.webp"
+    "floorplan": "floorplans/A-04.webp",
+    "isometric": "isometric/A-04.webp"
   },
   {
     "id": "LA-53",
@@ -944,7 +996,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-53.webp"
+    "floorplan": "floorplans/A-05.webp",
+    "isometric": "isometric/A-05.webp"
   },
   {
     "id": "LA-54",
@@ -962,7 +1015,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-54.webp"
+    "floorplan": "floorplans/A-06.webp",
+    "isometric": "isometric/A-06.webp"
   },
   {
     "id": "LA-55",
@@ -980,7 +1034,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-55.webp"
+    "floorplan": "floorplans/A-07.webp",
+    "isometric": "isometric/A-07.webp"
   },
   {
     "id": "LA-56",
@@ -998,7 +1053,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-56.webp"
+    "floorplan": "floorplans/A-08.webp",
+    "isometric": "isometric/A-08.webp"
   },
   {
     "id": "LA-57",
@@ -1017,7 +1073,8 @@
       "Video3",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-57.webp"
+    "floorplan": "floorplans/A-09.webp",
+    "isometric": "isometric/A-09.webp"
   },
   {
     "id": "LA-58",
@@ -1035,7 +1092,8 @@
       "Video2",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-58.webp"
+    "floorplan": "floorplans/A-10.webp",
+    "isometric": "isometric/A-10.webp"
   },
   {
     "id": "LA-59",
@@ -1054,7 +1112,8 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-59.webp"
+    "floorplan": "floorplans/A-11.webp",
+    "isometric": "isometric/A-11.webp"
   },
   {
     "id": "LA-60",
@@ -1072,7 +1131,8 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-60.webp"
+    "floorplan": "floorplans/A-12.webp",
+    "isometric": "isometric/A-12.webp"
   },
   {
     "id": "LA-61",
@@ -1089,7 +1149,8 @@
     "shots": [
       "Video4"
     ],
-    "floorplan": "floorplans/LA-61.webp"
+    "floorplan": "floorplans/A-61.webp",
+    "isometric": "isometric/A-61.webp"
   },
   {
     "id": "LA-62",
@@ -1108,7 +1169,8 @@
       "Video3",
       "Video4"
     ],
-    "floorplan": "floorplans/LA-62.webp"
+    "floorplan": "floorplans/A-62.webp",
+    "isometric": "isometric/A-62.webp"
   },
   {
     "id": "LA-63",
@@ -1126,7 +1188,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-63.webp"
+    "floorplan": "floorplans/A-63.webp",
+    "isometric": "isometric/A-63.webp"
   },
   {
     "id": "LA-64",
@@ -1144,7 +1207,8 @@
       "Video2",
       "Video3"
     ],
-    "floorplan": "floorplans/LA-64.webp"
+    "floorplan": "floorplans/A-64.webp",
+    "isometric": "isometric/A-64.webp"
   },
   {
     "id": "LA-65",
@@ -1163,7 +1227,8 @@
       "Video3",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-65.webp"
+    "floorplan": "floorplans/A-65.webp",
+    "isometric": "isometric/A-65.webp"
   },
   {
     "id": "LA-66",
@@ -1181,7 +1246,8 @@
       "Video2",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-66.webp"
+    "floorplan": "floorplans/A-66.webp",
+    "isometric": "isometric/A-66.webp"
   },
   {
     "id": "LA-67",
@@ -1200,6 +1266,7 @@
       "Video4",
       "Video5"
     ],
-    "floorplan": "floorplans/LA-67.webp"
+    "floorplan": "floorplans/A-67.webp",
+    "isometric": "isometric/A-67.webp"
   }
 ]

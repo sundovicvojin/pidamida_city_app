@@ -1,19 +1,24 @@
 import { BASE, CONFIG } from '../config';
 
 export interface NavHandlers {
+  up(): void;
+  down(): void;
   prev(): void;
   next(): void;
   goTo(i: number): void;
   home(): void;
 }
 
-const arrow = (dir: 'left' | 'right') =>
-  `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="${dir === 'left' ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7'}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="spinner"></span>`;
+const ARROW_PATH = { left: 'M15 5l-7 7 7 7', right: 'M9 5l7 7-7 7', up: 'M5 15l7-7 7 7', down: 'M5 9l7 7 7-7' };
+const arrow = (dir: keyof typeof ARROW_PATH) =>
+  `<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="${ARROW_PATH[dir]}" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="spinner"></span>`;
 
 export class Nav {
   readonly top = document.createElement('header');
   private prevBtn = document.createElement('button');
   private nextBtn = document.createElement('button');
+  private upBtn = document.createElement('button');
+  private downBtn = document.createElement('button');
   private dots: HTMLButtonElement[] = [];
 
   constructor(host: HTMLElement, h: NavHandlers) {
@@ -48,6 +53,15 @@ export class Nav {
     this.prevBtn.onclick = h.prev;
     this.nextBtn.onclick = h.next;
 
+    this.upBtn.className = 'arrow arrow--up glass';
+    this.downBtn.className = 'arrow arrow--down glass';
+    this.upBtn.innerHTML = arrow('up');
+    this.downBtn.innerHTML = arrow('down');
+    this.upBtn.setAttribute('aria-label', 'Krov');
+    this.downBtn.setAttribute('aria-label', 'Nazad');
+    this.upBtn.onclick = h.up;
+    this.downBtn.onclick = h.down;
+
     const dots = document.createElement('nav');
     dots.className = 'dots glass';
     dots.setAttribute('aria-label', 'Pogledi');
@@ -69,14 +83,13 @@ export class Nav {
     footer.className = 'footer';
     footer.innerHTML = `<span>${CONFIG.footerCredit}</span><span class="footer__sep">·</span><span>Created by <a href="https://www.instagram.com/devbyvojin/" target="_blank" rel="noopener">devbyvojin</a> &amp; <a href="https://www.instagram.com/lazares_media/" target="_blank" rel="noopener">lazares_media</a></span>`;
 
-    host.append(scrimTop, scrimBottom, top, this.prevBtn, this.nextBtn, dots, footer);
+    host.append(scrimTop, scrimBottom, top, this.prevBtn, this.nextBtn, this.upBtn, this.downBtn, dots, footer);
   }
 
   setActive(i: number) {
     this.dots.forEach((d, k) => d.classList.toggle('is-active', k === i));
   }
   setLoading(v: boolean) {
-    this.prevBtn.classList.toggle('is-loading', v);
-    this.nextBtn.classList.toggle('is-loading', v);
+    for (const b of [this.prevBtn, this.nextBtn, this.upBtn, this.downBtn]) b.classList.toggle('is-loading', v);
   }
 }

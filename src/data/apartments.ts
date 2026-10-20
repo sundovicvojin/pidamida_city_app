@@ -16,6 +16,8 @@ export interface Apartment {
   price: number | null;
   shots: string[];
   floorplan: string;
+  /** Izometrijski prikaz: naziv fajla iz public/isometric/, putanja ili pun link. Prazno = nema. */
+  isometric?: string;
 }
 
 export const STATUS_LABEL: Record<Status, string> = { free: 'Slobodan', reserved: 'Rezervisan', sold: 'Prodat' };

@@ -12,7 +12,8 @@
     "prebuild": "node scripts/build-manifest.mjs",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "validate": "node scripts/validate-assets.mjs"
+    "validate": "node scripts/validate-assets.mjs",
+    "brochure": "node scripts/brochure/generate.mjs"
   },
   "devDependencies": {
     "sharp": "^0.34.0",

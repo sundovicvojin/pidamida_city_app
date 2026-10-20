@@ -1,0 +1,74 @@
+@page { size: A4; margin: 0; }
+:root {
+  --ink: #0b0c0f; --ink-2: #16181d; --paper: #f6f3ee; --card: #fff; --line: #e3ddd2;
+  --muted: #7b7f88; --accent: #c9a96e; --accent-dk: #a8873f;
+  --free: #5f9272; --reserved: #c9a96e; --sold: #8a8d94; --cream: #f2efe9;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: 'Manrope', system-ui, sans-serif; color: var(--ink); background: #fff; }
+small { font-size: .6em; opacity: .7; }
+.page { position: relative; width: 210mm; height: 297mm; overflow: hidden; display: flex; flex-direction: column; break-after: page; page-break-after: always; }
+.page:last-child { break-after: auto; page-break-after: auto; }
+.logo { height: 8mm; display: block; }
+.kicker { font: 600 7.5pt/1 'Manrope'; letter-spacing: .26em; text-transform: uppercase; color: var(--accent); }
+.dot { display: inline-block; width: 2.2mm; height: 2.2mm; border-radius: 50%; margin-right: 1.8mm; vertical-align: .1mm; }
+
+/* ===== strana 1: tamna naslovna ===== */
+.p1 { background: radial-gradient(120% 70% at 50% 38%, #1d2027 0%, var(--ink) 70%); color: var(--cream); padding: 12mm 14mm 0; }
+.p1::before { content: ''; position: absolute; left: 0; top: 0; width: 100%; height: 1.4mm; background: linear-gradient(90deg, var(--accent), transparent 75%); }
+.p1__bar { display: flex; justify-content: space-between; align-items: center; }
+.p1__head { display: flex; justify-content: space-between; align-items: flex-end; margin-top: 16mm; gap: 8mm; }
+.p1__head .kicker { margin-bottom: 5mm; }
+.title { font: 200 44pt/1 'Outfit'; letter-spacing: .005em; }
+.title b { font-weight: 500; color: var(--accent); display: block; font-size: 58pt; margin-top: 1.5mm; }
+.area { text-align: right; }
+.area strong { display: block; font: 200 34pt/1 'Outfit'; }
+.area strong small { color: var(--accent); opacity: 1; font-size: 15pt; }
+.area span { font: 400 9.5pt 'Manrope'; color: rgb(242 239 233 / .6); }
+.p1__iso { flex: 1; min-height: 0; margin: 8mm -6mm 6mm; display: flex; }
+.figure { position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.figure img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+.figure--iso { flex: 1; min-height: 0; background: #fff; border-radius: 3mm; padding: 5mm; box-shadow: 0 8mm 20mm rgb(0 0 0 / .45); }
+.figure__tag { position: absolute; left: 5mm; bottom: 4mm; font: 600 6.5pt/1 'Manrope'; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+.figure--empty { color: var(--muted); font: 500 9pt 'Manrope'; letter-spacing: .12em; text-transform: uppercase; background: repeating-linear-gradient(135deg, #fff 0 3mm, #faf8f4 3mm 6mm); }
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); border-top: .25mm solid rgb(201 169 110 / .45); }
+.facts > div { padding: 6mm 4mm 6mm 0; }
+.facts > div + div { padding-left: 5mm; border-left: .25mm solid rgb(242 239 233 / .12); }
+.facts dt { font: 600 6.5pt/1 'Manrope'; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5mm; }
+.facts dd { font: 300 15pt/1.15 'Outfit'; }
+.p1__foot { display: flex; justify-content: space-between; padding: 5mm 0 8mm; border-top: .25mm solid rgb(242 239 233 / .12); font: 500 7pt/1 'Manrope'; letter-spacing: .14em; text-transform: uppercase; color: rgb(242 239 233 / .55); }
+
+/* ===== strana 2: tlocrt ===== */
+.p2 { background: var(--paper); }
+.p2__top { display: flex; justify-content: space-between; align-items: center; padding: 10mm 14mm 0; }
+
+.kicker--dk { color: var(--accent-dk); }
+.p2__main { flex: 1; min-height: 0; padding: 8mm 14mm 6mm; display: flex; flex-direction: column; gap: 4mm; }
+.h2 { display: flex; align-items: center; gap: 3mm; font: 600 7.5pt/1 'Manrope'; letter-spacing: .24em; text-transform: uppercase; color: var(--accent-dk); }
+.h2::after { content: ''; flex: 1; height: .25mm; background: var(--line); }
+.figure--plan { flex: 1; min-height: 0; background: var(--card); border: .25mm solid var(--line); border-radius: 2.5mm; padding: 6mm; margin-bottom: 3mm; }
+.p2__grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 8mm; }
+.rows > div { display: flex; justify-content: space-between; align-items: baseline; padding: 2mm 0; border-bottom: .25mm solid var(--line); }
+.rows dt { font: 600 6.5pt/1 'Manrope'; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.rows dd { font: 400 11pt/1 'Outfit'; }
+.rows > div:first-child dd { font-size: 14pt; color: var(--accent-dk); font-weight: 500; }
+.loc__in { display: flex; gap: 5mm; align-items: stretch; margin-top: 3.5mm; }
+.stack { display: flex; flex-direction: column; gap: .8mm; width: 15mm; }
+.stack i { height: 4.2mm; background: #e5dfd3; border-radius: .6mm; display: flex; align-items: center; justify-content: center; }
+.stack i b { font: 500 5.5pt 'Manrope'; color: #a29a89; }
+.stack i.on { background: var(--accent); } .stack i.on b { color: var(--ink); }
+.loc__t { font: 400 10pt/1.4 'Outfit'; align-self: center; }
+.loc__t b { display: block; font-weight: 500; font-size: 12pt; }
+.loc__t span { color: var(--muted); font-size: 8.5pt; }
+
+.cta { margin: 0 14mm 5mm; background: var(--ink); color: var(--cream); border-radius: 2.5mm; padding: 6mm 7mm; display: grid; grid-template-columns: 1.1fr 1fr; gap: 8mm; align-items: center; }
+.cta h3 { font: 300 14pt/1.2 'Outfit'; margin-bottom: 2mm; } .cta h3 b { font-weight: 500; color: var(--accent); }
+.cta p { font: 400 7.8pt/1.5 'Manrope'; color: rgb(242 239 233 / .62); }
+
+.cta__c { text-align: right; } .cta__c b { display: block; font: 500 11pt 'Outfit'; margin-bottom: 1.5mm; }
+.cta__c span { font: 600 6pt 'Manrope'; letter-spacing: .2em; text-transform: uppercase; color: var(--accent); }
+.foot { padding: 4mm 14mm 7mm; display: flex; justify-content: space-between; align-items: flex-end; gap: 10mm; border-top: .25mm solid var(--line); }
+.foot p { font: 400 6.2pt/1.5 'Manrope'; color: var(--muted); max-width: 125mm; }
+.foot__r { text-align: right; font: 500 6.5pt/1.5 'Manrope'; color: var(--muted); letter-spacing: .08em; white-space: nowrap; }
+.foot__r b { color: var(--ink); font-weight: 600; }

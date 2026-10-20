@@ -1,4 +1,4 @@
-import { CONFIG, asset } from '../config';
+import { CONFIG, asset, isoAsset } from '../config';
 import { STATUS_LABEL, type Apartment } from '../data/apartments';
 import { cap, fmtArea, fmtPrice, inquiryUrl } from '../data/format';
 import type { Store } from '../data/store';
@@ -90,8 +90,10 @@ export class ApartmentModal {
   private render(a: Apartment, swap = false) {
     const list = this.list();
     const idx = list.findIndex((x) => x.id === a.id);
-    const brochure = CONFIG.brochureUrl;
-    const plan = asset(a.floorplan);
+    const brochure = CONFIG.brochureUrl(a.id);
+    const floorplan = asset(a.floorplan);
+    const iso = a.isometric?.trim() ? isoAsset(a.isometric.trim()) : '';
+    let plan = iso || floorplan;
     this.card.setAttribute('aria-label', a.label);
     this.card.classList.toggle('is-swap', swap);
     this.card.innerHTML = `
@@ -99,8 +101,9 @@ export class ApartmentModal {
         <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       </button>
       <div class="modal__plan">
-        <button class="plan__btn" aria-label="Uvećaj tlocrt">
-          <img src="${plan}" alt="Tlocrt: ${a.label}" />
+        ${iso ? '<div class="plan__tabs"><button data-v="iso" class="is-on">Izometrija</button><button data-v="plan">Tlocrt</button></div>' : ''}
+        <button class="plan__btn" aria-label="Uvećaj sliku">
+          <img src="${plan}" alt="${a.label}" />
           <span class="plan__zoom">Uvećaj</span>
         </button>
         <p class="plan__missing">Tlocrt uskoro</p>
@@ -118,7 +121,7 @@ export class ApartmentModal {
         </dl>
         <div class="actions">
           <a class="btn btn--primary" href="${inquiryUrl(a)}" target="_blank" rel="noopener">Pošalji upit</a>
-          <a class="btn btn--ghost" href="${brochure}" download>Skini brošuru</a>
+          <a class="btn btn--ghost" href="${brochure}" target="_blank" rel="noopener">Skini brošuru</a>
         </div>
         <div class="pager">
           <button class="pager__btn" data-d="-1" aria-label="Prethodni stan"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -130,8 +133,16 @@ export class ApartmentModal {
     this.card.querySelectorAll<HTMLElement>('.pager__btn').forEach((b) => (b.onclick = () => this.step(Number(b.dataset.d) as 1 | -1)));
     const img = this.card.querySelector('img')!;
     img.onerror = () => this.card.querySelector('.modal__plan')!.classList.add('is-missing');
+    this.card.querySelectorAll<HTMLElement>('.plan__tabs button').forEach((b) => {
+      b.onclick = () => {
+        plan = b.dataset.v === 'iso' ? iso : floorplan;
+        img.src = plan;
+        this.card.querySelector('.modal__plan')!.classList.remove('is-missing');
+        this.card.querySelectorAll('.plan__tabs button').forEach((x) => x.classList.toggle('is-on', x === b));
+      };
+    });
     this.card.querySelector('.plan__btn')!.addEventListener('click', () => {
-      this.lightbox.innerHTML = `<img src="${plan}" alt="Tlocrt: ${a.label}" />`;
+      this.lightbox.innerHTML = `<img src="${plan}" alt="${a.label}" />`;
       this.lightbox.hidden = false;
     });
   }

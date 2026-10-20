@@ -52,7 +52,8 @@ const defaults = (id) => {
     status: 'free',
     price: null,
     shots: [],
-    floorplan: `floorplans/${id}.webp`,
+    floorplan: `floorplans/${id.replace(/^L/, "")}.webp`,
+    isometric: '', // naziv fajla iz public/isometric/ (npr. 'iso-01.webp'), putanja ili pun link; prazno = bez izometrije
   };
 };
 

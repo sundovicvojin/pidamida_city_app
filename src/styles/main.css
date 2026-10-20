@@ -148,6 +148,29 @@ button:focus-visible {
 .arrow--right {
   right: max(20px, env(safe-area-inset-right));
 }
+/* krov: strelica gore samo na prvom kadru, dole samo na krovu */
+.arrow--up,
+.arrow--down {
+  left: 50%;
+  top: max(96px, calc(env(safe-area-inset-top) + 84px));
+  margin: 0 0 0 -28px;
+}
+.arrow--up,
+.arrow--down,
+.on-roof .arrow--left,
+.on-roof .arrow--right,
+.on-roof .dots {
+  display: none;
+}
+.can-roof .arrow--up,
+.on-roof .arrow--down {
+  display: grid;
+}
+.is-rotating .arrow--up,
+.is-rotating .arrow--down {
+  pointer-events: none;
+}
+
 .arrow:hover {
   transform: scale(1.08);
 }
@@ -867,6 +890,33 @@ button:focus-visible {
   place-items: center;
   padding: 28px;
   background: linear-gradient(160deg, #f4f1ea, #e3ded2);
+}
+.plan__tabs {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 999px;
+  background: rgb(18 20 25 / 0.08);
+}
+.plan__tabs button {
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: none;
+  color: #4a463e;
+  font: inherit;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.plan__tabs button.is-on {
+  background: #1b1d22;
+  color: #fff;
 }
 .plan__btn {
   position: relative;

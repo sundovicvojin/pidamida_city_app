@@ -79,7 +79,7 @@ async function boot() {
   const store = new Store(await loadApartments());
   const overlay = new Overlay(stage.overlay, store);
   const aux = Promise.all(
-    shots.map(async (s) => {
+    [...shots, CONFIG.roof.prefix].map(async (s) => {
       const r = await fetch(`${CONFIG.svgPath}${s}.svg`);
       overlay.setSvg(s, r.ok ? await r.text() : '');
     }),
@@ -90,14 +90,17 @@ async function boot() {
   let nav!: Nav;
   let filters!: Filters;
   const showOverlay = (si: number) => {
-    overlay.show(shots[si]);
+    overlay.show(player.roof ? CONFIG.roof.prefix : shots[si]);
     app.classList.remove('is-rotating');
+    app.classList.toggle('on-roof', player.roof);
+    app.classList.toggle('can-roof', !player.roof && si === 0);
     nav.setActive(si);
     filters.updateHint();
   };
   const player = new Player(stage, frames, {
     onStart: () => app.classList.add('is-rotating'),
     onLoading: (v) => nav.setLoading(v),
+    onRoof: () => {},
     onEnd: (si) => {
       showOverlay(si);
       prefetch(si);
@@ -107,12 +110,18 @@ async function boot() {
   nav = new Nav(app, {
     prev: player.prev,
     next: player.next,
+    up: player.roofUp,
+    down: player.roofDown,
     goTo: (i) => player.go(i),
     home: () => player.go(0),
   });
   const modal = new ApartmentModal(store);
   new Tooltip(stage.overlay, store, { open: (a) => modal.open(a) }, CONFIG.soldClickable);
-  filters = new Filters(app, store, { currentShot: () => player.current, goToShot: (i) => player.go(i) });
+  filters = new Filters(app, store, { currentShot: () => player.current,
+    currentPrefix: () => (player.roof ? CONFIG.roof.prefix : CONFIG.shots[player.current].prefix), goToShot: (i) => {
+      if (player.roof) player.roofDown();
+      player.go(i);
+    } });
   app.append(filters.button);
 
   // --- Faza B: pozadinsko učitavanje ---
@@ -133,8 +142,11 @@ async function boot() {
   addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') player.next();
     if (e.key === 'ArrowLeft') player.prev();
+    if (e.key === 'ArrowUp') player.roofUp();
+    if (e.key === 'ArrowDown') player.roofDown();
   });
   attachSwipe(app, (dir) => (dir === 1 ? player.next() : player.prev()));
+  if (!isConstrained()) frames.files(CONFIG.roof.prefix).forEach((_, i) => void frames.load(CONFIG.roof.prefix, i, 2));
 
   if (new URLSearchParams(location.search).has('debug')) devStatus(app, frames, manifest.hash, player);
 }

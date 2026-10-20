@@ -4,6 +4,7 @@ import type { Store } from '../data/store';
 
 export interface FiltersHooks {
   currentShot(): number;
+  currentPrefix(): string;
   goToShot(i: number): void;
 }
 
@@ -163,7 +164,7 @@ export class Filters {
   updateHint() {
     const res = this.store.results();
     this.count.textContent = `Pronađeno: ${res.length} ${res.length === 1 ? 'stan' : 'stanova'}`;
-    const cur = CONFIG.shots[this.hooks.currentShot()].prefix;
+    const cur = this.hooks.currentPrefix();
     const here = res.some((a) => a.shots.includes(cur));
     const target = CONFIG.shots.findIndex((s) => res.some((a) => a.shots.includes(s.prefix)));
     this.hint.hidden = here || target < 0;

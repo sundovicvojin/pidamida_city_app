@@ -15,6 +15,8 @@ export const CONFIG = {
     { prefix: 'Video4', frames: 100 },
     { prefix: 'Video5', frames: 100 },
   ] as Shot[],
+  // Krov: nije u rotaciji; animacija ide gore sa prvog kadra (Video6_000 → _100) i nazad.
+  roof: { prefix: 'Video6', frames: 101 } as Shot,
   renderPath: `${BASE}renders/`, // URL kadra: `${renderPath}${prefix}/${prefix}_${NNN}.webp`
   svgPath: `${BASE}svg/`,
   frameExt: 'webp',
@@ -34,7 +36,7 @@ export const CONFIG = {
   contactEndpoint: '/api/send.php',
   // PLACEHOLDER: kad zvanični sajt dobije kontakt stranu, upiši njen URL. Podaci o stanu se šalju kao query parametri.
   inquiryUrl: 'https://example.com/kontakt/',
-  brochureUrl: `${BASE}docs/brosura.pdf`,
+  brochureUrl: (id: string) => `${BASE}brochures/${id}.pdf`, // generiše se: npm run brochure -- --all
   // Delovi SVG-a koji nisu stanovi, ali se prikazuju sivo sa porukom (npr. lamele u izgradnji).
   zones: { LB: 'Lamela B', LC: 'Lamela C' } as Record<string, string>,
   zoneNote: 'U izgradnji',
@@ -44,6 +46,9 @@ export const CONFIG = {
 
 /** Putanje iz JSON-a mogu biti '/floorplans/x.webp' ili 'floorplans/x.webp'; oba rade u podfolderu. */
 export const asset = (p: string) => (/^(https?:)?\/\//.test(p) ? p : BASE + p.replace(/^\//, ''));
+
+/** Izometrija: golo ime fajla -> public/isometric/<ime>; putanja ili link ostaju kakvi jesu. */
+export const isoAsset = (p: string) => (/^(https?:)?\/\/|\//.test(p) ? asset(p) : `${BASE}isometric/${p}`);
 
 export const frameUrl = (prefix: string, i: number, base = CONFIG.renderPath) =>
   `${base}${prefix}/${prefix}_${String(i).padStart(CONFIG.pad, '0')}.${CONFIG.frameExt}`;

@@ -12,6 +12,7 @@ export interface PlayerHooks {
   onStart(): void;
   onEnd(shot: number): void;
   onLoading(v: boolean): void;
+  onRoof(on: boolean): void;
 }
 
 const AHEAD = isLowEnd() ? CONFIG.decode.aheadLow : CONFIG.decode.ahead;
@@ -20,6 +21,7 @@ const BEHIND = 3;
 export class Player {
   current = 0;
   playing = false;
+  roof = false;
   private pending: (() => void) | null = null;
   private stops = new Set<string>();
 
@@ -30,6 +32,12 @@ export class Player {
   ) {
     const n = CONFIG.shots.length;
     for (let s = 0; s < n; s++) this.stops.add(this.loader.key(this.prefix(s), this.loader.files(this.prefix(s))[0]));
+  }
+
+  private roofStops() {
+    const p = CONFIG.roof.prefix;
+    const files = this.loader.files(p);
+    return new Set([this.loader.key(p, files[files.length - 1])]);
   }
 
   private prefix = (s: number) => CONFIG.shots[s].prefix;
@@ -48,8 +56,41 @@ export class Player {
   prev = () => this.step(-1);
   private step(dir: 1 | -1) {
     if (this.playing) this.pending = () => this.step(dir);
-    else this.go(this.wrap(this.current + dir), dir);
+    else if (!this.roof) this.go(this.wrap(this.current + dir), dir);
   }
+
+  /** Krov: samo sa prvog kadra. Video6_000 → Video6_100 (poslednji frame ostaje na ekranu). */
+  roofUp = () => {
+    if (this.playing) {
+      this.pending = () => this.roofUp();
+      return;
+    }
+    if (this.roof || this.current !== 0) return;
+    const p = CONFIG.roof.prefix;
+    const run: Ref[] = [];
+    for (let i = 1; i < this.loader.files(p).length; i++) run.push({ prefix: p, i });
+    void this.play(run, () => {
+      this.roof = true;
+      this.hooks.onRoof(true);
+    });
+  };
+
+  /** Povratak: Video6_100 → Video6_000, pa odmah Video2_000 (isti frame). */
+  roofDown = () => {
+    if (this.playing) {
+      this.pending = () => this.roofDown();
+      return;
+    }
+    if (!this.roof) return;
+    const p = CONFIG.roof.prefix;
+    const run: Ref[] = [];
+    for (let i = this.loader.files(p).length - 2; i >= 0; i--) run.push({ prefix: p, i });
+    void this.play(run, async () => {
+      await this.showStill(0);
+      this.roof = false;
+      this.hooks.onRoof(false);
+    });
+  };
 
   /** Rotacija do kadra `target`; bez `dir` bira najkraći put. */
   go(target: number, dir?: 1 | -1) {
@@ -57,10 +98,14 @@ export class Player {
       this.pending = () => this.go(target, dir);
       return;
     }
+    if (this.roof) return;
     const diff = this.wrap(target - this.current);
     if (diff === 0) return;
     const forward = dir ? dir === 1 : diff <= this.n / 2;
-    void this.play(target, forward ? 1 : -1, forward ? diff : this.n - diff);
+    const dirN = forward ? 1 : -1;
+    void this.play(this.buildRun(dirN, forward ? diff : this.n - diff), () => {
+      this.current = target;
+    });
   }
 
   /** Frameovi tranzicije: napred s_001..s_099 pa next_000; nazad prev_099..prev_000. */
@@ -88,10 +133,9 @@ export class Player {
     return p + (s - p) * k;
   }
 
-  private async play(target: number, dir: 1 | -1, steps: number) {
+  private async play(run: Ref[], finish: () => void | Promise<void>) {
     this.playing = true;
     this.loader.setPaused(true);
-    const run = this.buildRun(dir, steps);
 
     // Cela rotacija mora biti u memoriji pre starta; inače se animacija seče.
     const missing = run.filter((r) => !this.loader.has(r.prefix, r.i));
@@ -106,11 +150,11 @@ export class Player {
     this.hooks.onStart();
     await this.animate(run);
 
-    this.current = target;
+    await finish();
     this.playing = false;
-    this.loader.retain(this.stops);
+    this.loader.retain(this.roof ? this.roofStops() : this.stops);
     this.loader.setPaused(false);
-    this.hooks.onEnd(target);
+    this.hooks.onEnd(this.current);
     if (this.pending) {
       const p = this.pending;
       this.pending = null;
