@@ -37,6 +37,8 @@ export const CONFIG = {
   // PLACEHOLDER: kad zvanični sajt dobije kontakt stranu, upiši njen URL. Podaci o stanu se šalju kao query parametri.
   inquiryUrl: 'https://example.com/kontakt/',
   brochureUrl: (id: string) => `${BASE}brochures/${id}.pdf`, // generiše se: npm run brochure -- --all
+  // 360° pogled sa krova: slika public/panoramas/<ID>.<ext>; dugme se prikazuje samo za ove stanove.
+  panorama: { ids: ['LA-61', 'LA-62', 'LA-63', 'LA-64', 'LA-65', 'LA-67'], ext: 'jpg' },
   // Delovi SVG-a koji nisu stanovi, ali se prikazuju sivo sa porukom (npr. lamele u izgradnji).
   zones: { LB: 'Lamela B', LC: 'Lamela C' } as Record<string, string>,
   zoneNote: 'U izgradnji',
@@ -52,3 +54,5 @@ export const isoAsset = (p: string) => (/^(https?:)?\/\/|\//.test(p) ? asset(p) 
 
 export const frameUrl = (prefix: string, i: number, base = CONFIG.renderPath) =>
   `${base}${prefix}/${prefix}_${String(i).padStart(CONFIG.pad, '0')}.${CONFIG.frameExt}`;
+
+export const panoramaUrl = (id: string) => `${BASE}panoramas/${id}.${CONFIG.panorama.ext}`;

@@ -1,7 +1,8 @@
-import { CONFIG, asset, isoAsset } from '../config';
+import { CONFIG, asset, isoAsset, panoramaUrl } from '../config';
 import { STATUS_LABEL, type Apartment } from '../data/apartments';
 import { cap, fmtArea, fmtPrice, inquiryUrl } from '../data/format';
 import type { Store } from '../data/store';
+import { PanoramaViewer } from '../viewer/panorama';
 
 const FOCUSABLE = 'a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])';
 
@@ -9,6 +10,7 @@ export class ApartmentModal {
   private root = document.createElement('div');
   private card = document.createElement('div');
   private lightbox = document.createElement('div');
+  private pano = new PanoramaViewer();
   private current: Apartment | null = null;
   private returnFocus: HTMLElement | null = null;
 
@@ -48,6 +50,7 @@ export class ApartmentModal {
     if (!this.isOpen) return;
     this.root.hidden = true;
     this.lightbox.hidden = true;
+    this.pano.close();
     document.body.classList.remove('modal-open');
     document.querySelectorAll('.apt.is-active').forEach((e) => e.classList.remove('is-active'));
     this.returnFocus?.focus();
@@ -72,10 +75,12 @@ export class ApartmentModal {
     if (!this.isOpen) return;
     if (e.key === 'Escape') {
       e.stopImmediatePropagation();
-      if (!this.lightbox.hidden) this.lightbox.hidden = true;
+      if (this.pano.isOpen) this.pano.close();
+      else if (!this.lightbox.hidden) this.lightbox.hidden = true;
       else this.close();
     } else if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
       e.stopImmediatePropagation();
+      if (this.pano.isOpen) return;
       this.step(e.key === 'ArrowRight' ? 1 : -1);
     } else if (e.key === 'Tab') {
       const f = [...this.card.querySelectorAll<HTMLElement>(FOCUSABLE)].filter((x) => x.offsetParent);
@@ -91,6 +96,7 @@ export class ApartmentModal {
     const list = this.list();
     const idx = list.findIndex((x) => x.id === a.id);
     const brochure = CONFIG.brochureUrl(a.id);
+    const has360 = CONFIG.panorama.ids.includes(a.id);
     const floorplan = asset(a.floorplan);
     const iso = a.isometric?.trim() ? isoAsset(a.isometric.trim()) : '';
     let plan = iso || floorplan;
@@ -122,6 +128,7 @@ export class ApartmentModal {
         <div class="actions">
           <a class="btn btn--primary" href="${inquiryUrl(a)}" target="_blank" rel="noopener">Pošalji upit</a>
           <a class="btn btn--ghost" href="${brochure}" target="_blank" rel="noopener">Skini brošuru</a>
+          ${has360 ? '<button class="btn btn--ghost btn--360" type="button">360° pogled</button>' : ''}
         </div>
         <div class="pager">
           <button class="pager__btn" data-d="-1" aria-label="Prethodni stan"><svg viewBox="0 0 24 24" width="18" height="18"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -131,6 +138,7 @@ export class ApartmentModal {
       </div>`;
     this.card.querySelector('.modal__close')!.addEventListener('click', () => this.close());
     this.card.querySelectorAll<HTMLElement>('.pager__btn').forEach((b) => (b.onclick = () => this.step(Number(b.dataset.d) as 1 | -1)));
+    this.card.querySelector<HTMLElement>('.btn--360')?.addEventListener('click', () => this.pano.open(panoramaUrl(a.id), a.label));
     const img = this.card.querySelector('img')!;
     img.onerror = () => this.card.querySelector('.modal__plan')!.classList.add('is-missing');
     this.card.querySelectorAll<HTMLElement>('.plan__tabs button').forEach((b) => {
